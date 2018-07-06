@@ -1,15 +1,16 @@
 <template>
-    <div class="show-tab-block">
-        <p>423532543</p>
+    <div class="box-grid-row">
+        <slot></slot>
     </div>
 </template>
 
 <script>
     export default{
-        name: 'tabblock2'
+        name: 'box-grid-row'
     }
 </script>
 
 <style>
 
 </style>
+

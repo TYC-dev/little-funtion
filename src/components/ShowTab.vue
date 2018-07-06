@@ -39,12 +39,15 @@
     }
 </script>
 
-<style>
+<style lang="less">
 .tab-des{
     padding: 0 10px;
 }
 .show-tab-block{
     padding: 10px;
     text-align: left;
+    p{
+        font-size: 20px;
+    }
 }
 </style>

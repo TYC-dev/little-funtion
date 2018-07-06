@@ -6,6 +6,7 @@ import ShowProcessBar from '@/components/ShowProcessBar'
 import ShowTab from '@/components/ShowTab'
 import ShowFlexBox from '@/components/ShowFlexBox'
 import ShowBoxGrid from '@/components/ShowBoxGrid'
+import Showcheader from '@/components/Showheader'
 
 import TabBlock1 from '@/components/ShowTabBlock1'
 import TabBlock2 from '@/components/ShowTabBlock2'
@@ -46,6 +47,10 @@ export default new Router({
     {
       path: '/boxgrid',
       component: ShowBoxGrid
+    },
+    {
+      path: '/header',
+      component: Showcheader
     }
   ]
 })

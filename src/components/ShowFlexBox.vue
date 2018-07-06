@@ -36,6 +36,9 @@
                 <div class="flex-inner">1</div>
             </flexbox-item>
         </flexbox>
+        <div class="showflexboxdes">
+            <p><a href="https://github.com/TYC-dev/little-toolkit/tree/master/src/components/boxgrid">组件代码</a></p>
+        </div>
     </div>
     
 </template>
@@ -53,7 +56,7 @@
     }
 </script>
 
-<style>
+<style lang="less">
 .flex-inner{
     color: #fff;
     font-size: 15px;
@@ -61,8 +64,17 @@
     border-radius: 4px;
     background-color: #45adca
 }
-.showflexboxeach{
-    margin-top: 20px;
+.showflexbox{
+   .showflexboxeach{
+        margin-top: 20px;
+    }
+    .showflexboxdes{
+        margin-top: 10px;
+        p{
+            font-size: 20px;
+        }
+    } 
 }
+
 </style>
 
