@@ -28,8 +28,9 @@
             .boxgrid-item{
                 flex: 1;
                 position: relative;
-                padding: 15px 0;
+                padding: 13px 0;
                 width: 100%;
+                text-align: center;
                 &::after{
                     content: '';
                     position: absolute;
@@ -47,6 +48,20 @@
                     top: 0;
                     border-top: 1px solid @boederColer;
                     transform: scaleY(0.5)
+                }
+                &-icon{
+                    display: inline-block;
+                    width: 24px;
+                    height: 24px;
+                    img{
+                        width: 100%;
+                        height: 100%;
+                    }
+                }
+                &-label{
+                    font-size: 16px;
+                    line-height: 1.8;
+                    text-align: center;
                 }
             }
         }

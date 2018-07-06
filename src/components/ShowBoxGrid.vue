@@ -3,14 +3,28 @@
         <box-grid>
             <box-grid-row>
                <box-grid-item>
-                lskj
+                   <span slot="label">no icon</span>
                 </box-grid-item>
                 <box-grid-item>
-                    lskj
+                    <span slot="label">no icon</span>
                 </box-grid-item>
                 <box-grid-item>
-                    lskj
+                    <span slot="label">no icon</span>
                 </box-grid-item> 
+            </box-grid-row>
+            <box-grid-row>
+                <box-grid-item>
+                    <img slot="icon" src="../assets/icon/createtask.png" alt="">
+                    <span slot="label">have icon</span>
+                </box-grid-item>
+                <box-grid-item link="/">
+                    <img slot="icon" src="../assets/icon/createtask.png" alt="">
+                    <span slot="label">router link</span>
+                </box-grid-item>
+                <box-grid-item link="https://wwww.baidu.com">
+                    <img slot="icon" src="../assets/icon/createtask.png" alt="">
+                    <span slot="label">outer link</span>
+                </box-grid-item>
             </box-grid-row>
         </box-grid>
         <div class="show-box-grid-des">

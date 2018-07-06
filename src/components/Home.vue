@@ -2,21 +2,28 @@
     <div class="home">
         <box-grid>
             <box-grid-row>
-               <box-grid-item>
-                    <router-link to="/tab">Tab</router-link>
+               <box-grid-item link="/tab">
+                    <img slot="icon" src="../assets/icon/createtask.png" alt="">
+                    <span slot="label">Tab</span>
                 </box-grid-item>
-                <box-grid-item>
-                    <router-link to="/process-bar">Process-bar</router-link>
+                <box-grid-item link="/process-bar">
+                    <img slot="icon" src="../assets/icon/createtask.png" alt="">
+                    <span slot="label">ProcessBar</span>
                 </box-grid-item>
-                <box-grid-item>
-                    <router-link to="/flexbox">Flexbox</router-link>
+                <box-grid-item link="/flexbox">
+                    <img slot="icon" src="../assets/icon/createtask.png" alt="">
+                    <span slot="label">Flexbox</span>
                 </box-grid-item> 
             </box-grid-row>
             <box-grid-row>
-                <box-grid-item>
-                    <router-link to="/boxgrid">Boxgrid</router-link>
+                <box-grid-item link="/boxgrid">
+                    <img slot="icon" src="../assets/icon/createtask.png" alt="">
+                    <span slot="label">Boxgrid</span>
                 </box-grid-item>
-                <box-grid-item></box-grid-item>
+                <box-grid-item link="/header">
+                    <img slot="icon" src="../assets/icon/createtask.png" alt="">
+                    <span slot="label">Header</span>
+                </box-grid-item>
                 <box-grid-item></box-grid-item>
             </box-grid-row>
         </box-grid>
