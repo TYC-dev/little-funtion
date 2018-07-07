@@ -1,13 +1,16 @@
 <template>
     <div class="process-bar">
         <div class="process-bar-inner"
-            v-bind:style="{ width: scrollProcess + '%', backgroundColor: barColor }"></div>
+            :style="barStyle"></div>
     </div>
 </template>
 
 <script>
     export default{
         name: 'processbar',
+        mounted(){
+            window.addEventListener('scroll', this.handleScroll)
+        },
         props:{
             barColor: {
                 type: String,
@@ -19,15 +22,27 @@
                 scrollProcess: 0
             }
         },
-        mounted(){
-            window.addEventListener('scroll',()=>{
+        computed: {
+            barStyle() {
+                const styles = {
+                    width: this.scrollProcess + '%',
+                    backgroundColor: this.barColor
+                }
+                return styles
+            }
+        },
+        methods: {
+            handleScroll() {
                 let clientHeight = document.documentElement.clientHeight || window.innerHeight;
                 let offsetHeight = document.documentElement.offsetHeight;
                 let scrollTop = document.documentElement.scrollTop || window.pageYOffset || document.body.scrollTop || 0;
                 let scrollPer = scrollTop / (offsetHeight - clientHeight);
 
                 this.scrollProcess = scrollPer.toFixed(2)*100
-            })
+            }
+        },
+        beforeDestroy(){
+            window.removeEventListener('scroll', this.handleScroll)
         }
     }
 </script>
