@@ -1,14 +1,23 @@
 <template>
   <div id="app">
-    <!-- //<process-bar :barColor="'#ff0909'"></process-bar> -->
-    <img src="./assets/logo.png">
-    <router-view/>
+    <cbox>
+      <cheader slot="header"><span slot="title">sdfad</span></cheader>
+      <img src="./assets/logo.png">
+      <router-view/>
+    </cbox>
+    
   </div>
 </template>
 
 <script>
+import Cbox from './components/Cbox/Cbox'
+import Cheader from './components/Cheader/Cheader'
 export default {
-  name: 'App'
+  name: 'App',
+  components: {
+    Cbox,
+    Cheader
+  }
 }
 </script>
 
@@ -20,7 +29,7 @@ export default {
   text-align: center;
   line-height: 1.6;
   color: #2c3e50;
-  margin-top: 60px;
+  height: 100%;
 }
 a{
   text-decoration: none;
