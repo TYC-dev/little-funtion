@@ -8,6 +8,7 @@ import ShowFlexBox from '@/components/ShowFlexBox'
 import ShowBoxGrid from '@/components/ShowBoxGrid'
 import Showcheader from '@/components/Showheader'
 import ShowCbox from '@/components/ShowCbox'
+import ShowCtable from '@/components/ShowTable'
 
 import TabBlock1 from '@/components/ShowTabBlock1'
 import TabBlock2 from '@/components/ShowTabBlock2'
@@ -56,6 +57,10 @@ export default new Router({
     {
       path: '/cbox',
       component: ShowCbox
+    },
+    {
+      path: '/table',
+      component: ShowCtable
     }
   ]
 })
