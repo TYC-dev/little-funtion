@@ -1,13 +1,7 @@
 <template>
     <div class="tab-wrap">
 		<div class="tab-wrap-inner">
-			<div 
-              class="tab-item"
-              v-for="(item,index) in itemList"
-              :key="item.index"
-              @click="toggle(index,item)">
-			  	{{ item.content }}
-			</div>
+			<slot></slot>
 			<div class="tab-bar"
 			  :class="transClass"
 			  :style="tabBarStyle"></div>
@@ -18,10 +12,18 @@
 <script>
     export default{
         name: 'tab',
+		mounted(){
+			this.itemInit()
+			this.setIndex()
+			this.$nextTick(function(){
+				this.childNunber = this.$children.length
+			})	
+		},
         data(){
             return{
-				currentIndex: 0,
-				moveDirection: 'forward'
+				currentIndex: -1,
+				moveDirection: 'forward',
+				childNunber: this.$children.length
             }
         },
 		props: {
@@ -32,20 +34,32 @@
 			}
 		},
         methods:{
-            toggle(index, item){
-				this.currentIndex = index;
-				if(!item.link == ''){
-					this.$router.push(item.link)
+			itemInit() {
+				if(!this.$children) return
+				let children = this.$children
+				for(let i = 0; i < children.length; i++){
+					if(children[i].isActive == true ){
+						this.currentIndex = i
+						return
+					}
+				}
+				this.currentIndex = 0;
+			},
+			setIndex() {
+				if(!this.$children) return
+				let children = this.$children
+				for(let i = 0; i < children.length; i++){
+					children[i].currentIndex = i
 				}
 			}
         },
 		computed:{
 			barRight() {
-				const barRight = (Math.abs(this.currentIndex - this.itemList.length + 1) / this.itemList.length) * 100 + '%'
+				const barRight = (Math.abs(this.currentIndex - this.childNunber + 1) / this.childNunber) * 100 + '%'
 				return barRight
 			},
 			barLeft() {
-				const barLeft = (this.currentIndex / this.itemList.length) * 100 + '%'
+				const barLeft = (this.currentIndex / this.childNunber) * 100 + '%'
 				return barLeft
 			},
 			tabBarStyle() {
@@ -84,7 +98,7 @@
 	padding: 0 3px;
 	box-sizing: border-box;
 	border-radius: .2rem;
-	background-color: rgba(0,0,0,.05);
+	background-color: rgba(0,0,0,.1);
 	&-inner{
 		position: relative;
 		display: flex;
@@ -95,7 +109,30 @@
 			line-height: 36px;
 			color: rgba(102,102,102,1);
 			text-align: center;
+			border-radius: .3rem;
 			z-index: 501;
+			&-icon{
+				display: inline-block;
+				position: relative;
+				top: 3px;
+				width: 16px;
+				height: 16px;
+				margin-right: 5px;
+				img{
+					width: 100%;
+					height: 100%;
+				}
+			}
+		}
+		.tab-item-disable{
+			background-image: linear-gradient(45deg, 
+							rgba(255,255,255,.7) 25%,
+							transparent 25%,
+							transparent 50%,
+							rgba(255,255,255,.7) 50%,
+							rgba(255,255,255,.7) 75%,
+							transparent 75%);
+			background-size: 36px 36px;	
 		}
 		.tab-bar{
 			position: absolute;

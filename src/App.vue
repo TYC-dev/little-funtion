@@ -2,8 +2,8 @@
   <div id="app">
     <cbox>
       <cheader slot="header"><span slot="title">sdfad</span></cheader>
-      <img src="./assets/logo.png">
-      <router-view/>
+      <!-- <img src="./assets/logo.png"> -->
+      <router-view></router-view>
     </cbox>
     
   </div>

@@ -6,7 +6,7 @@
 
 <script>
     export default{
-        name: 'tabblock2'
+        name: 'tab-block2'
     }
 </script>
 

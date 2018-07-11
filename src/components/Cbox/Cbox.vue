@@ -1,7 +1,7 @@
 <template>
     <div class="c-box">
         <slot name="header"></slot>
-        <div class="c-box-content"
+        <div class="c-box-content" ref="viewBox"
           :style="contentStyle">
             <slot></slot>
         </div>
@@ -42,7 +42,7 @@
             position: relative;
             height: 100%;
             box-sizing: border-box;
-            overflow: auto;
+            overflow: scroll;
         }
     }
 </style>

@@ -1,5 +1,6 @@
 <template>
-    <div class="process-bar">
+    <div class="process-bar"
+      :class="{'process-bar-header': withHeader}">
         <div class="process-bar-inner"
             :style="barStyle"></div>
     </div>
@@ -9,7 +10,11 @@
     export default{
         name: 'processbar',
         mounted(){
-            window.addEventListener('scroll', this.handleScroll)
+            if(this.$parent.$parent.$slots.header){
+                this.withHeader = true
+            }
+            this.$parent.$el.addEventListener('touchmove', this.handleScroll)
+            console.log(this.$parent.$parent.$slots.header)
         },
         props:{
             barColor: {
@@ -19,7 +24,8 @@
         },
         data(){
             return{
-                scrollProcess: 0
+                scrollProcess: 0,
+                withHeader: false
             }
         },
         computed: {
@@ -34,11 +40,11 @@
         methods: {
             handleScroll() {
                 let clientHeight = document.documentElement.clientHeight || window.innerHeight;
-                let offsetHeight = document.documentElement.offsetHeight;
-                let scrollTop = document.documentElement.scrollTop || window.pageYOffset || document.body.scrollTop || 0;
+                let offsetHeight = this.$parent.$el.offsetHeight;
+                let scrollTop = this.$parent.$parent.$refs.viewBox.scrollTop
                 let scrollPer = scrollTop / (offsetHeight - clientHeight);
-
                 this.scrollProcess = scrollPer.toFixed(2)*100
+                //console.log(this.$parent.$parent.$refs.viewBox.scrollTop)
             }
         },
         beforeDestroy(){
@@ -49,7 +55,7 @@
 
 <style lang="less" scope>
     .process-bar{
-        position: absolute;
+        position: fixed;
         top: 0;
         left: 0;
         height: 3px;
@@ -58,5 +64,8 @@
             height: 3px;
             width: 100%;
         }
+    }
+    .process-bar-header{
+        top: 44px
     }
 </style>
