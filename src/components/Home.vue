@@ -24,7 +24,10 @@
                     <img slot="icon" src="../assets/icon/createtask.png" alt="">
                     <span slot="label">Header</span>
                 </box-grid-item>
-                <box-grid-item></box-grid-item>
+                <box-grid-item link="/table">
+                    <img slot="icon" src="../assets/icon/createtask.png" alt="">
+                    <span slot="label">Ctable</span>
+                </box-grid-item>
             </box-grid-row>
         </box-grid>
     </div>

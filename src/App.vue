@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <cbox>
+    <cbox style="background-color: #fff">
       <cheader slot="header"><span slot="title">sdfad</span></cheader>
       <!-- <img src="./assets/logo.png"> -->
       <router-view></router-view>

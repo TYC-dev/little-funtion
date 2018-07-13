@@ -15,19 +15,73 @@
           :leftType="{showLeftText: false}"><span slot="title">left back without text</span></cheader>
         <cheader style="top: 386px"
           :leftType="{showLeft: false}"><span slot="title">no left back</span></cheader>
+          <div class="show-header-des">
+              <h4>属性</h4>
+                <c-table :responsive="true">  
+                  <thead>
+                      <tr>
+                          <th>属性名</th>
+                          <th>类型</th>
+                          <th>默认值</th>
+                          <th>说明</th>
+                      </tr>
+                  </thead>
+                  <tbody>
+                      <tr>
+                          <td>title</td>
+                          <td>String</td>
+                          <td></td>
+                          <td>标题</td>
+                      </tr>
+                      <tr>
+                          <td>rightType.showRight</td>
+                          <td>Boolean</td>
+                          <td>true</td>
+                          <td>是否显示右边</td>
+                      </tr>
+                      <tr>
+                          <td>rightType.showType</td>
+                          <td>String</td>
+                          <td>text</td>
+                          <td>右边显示类型，text文字，dot点</td>
+                      </tr>
+                      <tr>
+                          <td>leftType.showLeft</td>
+                          <td>Boolean</td>
+                          <td>true</td>
+                          <td>是否显示左边</td>
+                      </tr>
+                      <tr>
+                          <td>leftType.showLeftText</td>
+                          <td>Boolean</td>
+                          <td>true</td>
+                          <td>是否显示左边文字</td>
+                      </tr>
+                  </tbody>
+              </c-table>
+          </div>
     </div>
 </template>
 
 <script>
     import Cheader from './Cheader/Cheader' 
+    import CTable from './CTable/CTable'
     export default{
         name: 'showcheader',
         components: {
-            Cheader
+            Cheader,
+            CTable
         }
     }
 </script>
 
 <style lang="less">
-
+    .show-header-des{
+        text-align: left;
+        margin-top: 430px;
+        //overflow-y: scroll;
+        h4{
+            padding-left: 10px;
+        }
+    }
 </style>
