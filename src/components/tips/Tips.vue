@@ -1,6 +1,6 @@
 <template>
     <div class="tips"
-      :class="{'tips-show': show}">
+      :class="showClass">
         <slot>
             <p>{{text}}</p>
         </slot>
@@ -20,6 +20,25 @@
             direction: {
                 type: String,
                 default: 'bottom'
+            }
+        },
+        mounted() {
+            console.log(this.direction)
+        },
+        computed: {
+            showClass() {
+                if(this.direction == 'bottom'){
+                    return {
+                        'tips-bottom': true,
+                        'tips-bottom-show': this.show
+                    }
+                }else if(this.direction == 'top'){
+                    return {
+                        'tips-top': true,
+                        'tips-top-show': this.show
+                    }
+                }
+                
             }
         },
         watch: {
@@ -47,24 +66,36 @@
 </script>
 
 <style lang="less">
-    .tips-show{
-        bottom: 80px !important;
-    }
     .tips{
         z-index: 550;
         position: fixed;
         left: 50%;
-        bottom: -40px;
         min-width: 76px;
         padding: 5px 15px;
         transform: translateX(-50%);
-        transition: all .5s;
         border-radius: 4px;
         background-color: #9f9f9f;
+    }
+    .tips{
+        transition: all .5s;
+    }
+    .tips{
         font-size: 16px;
-        line-height: 34px;
+        line-height: 26px;
         text-align: center;
         color: #fff;
+    }
+    .tips-top{
+        top: -40px;
+    }
+    .tips-top-show{
+        top: 64px !important;
+    }
+    .tips-bottom{
+        bottom: -40px;
+    }
+    .tips-bottom-show{
+        bottom: 80px !important;
     }
 </style>
 
