@@ -49,10 +49,10 @@
                 <span>567</span>
             </tab-item>
         </tab>
-        <h5></h5>
+        <h5>设置tabitem的响应事件</h5>
         <tab>
-            <tab-item @on-Item-Click="swichTab">1</tab-item>
-            <tab-item @on-Item-Click="swichTab">2</tab-item>
+            <tab-item @on-Item-Click="swichTab">介绍</tab-item>
+            <tab-item @on-Item-Click="swichTab">属性</tab-item>
         </tab>
         <tab-block1 v-show="tabShow == 0"></tab-block1>
         <tab-block2 v-show="tabShow == 1"></tab-block2>
@@ -103,7 +103,11 @@
     padding: 10px;
     text-align: left;
     p{
-        font-size: 20px;
+        font-size: 16px;
+    }
+    h3{
+        font-size: 26px;
+        color: #45adca
     }
 }
 </style>

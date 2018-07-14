@@ -27,7 +27,6 @@
             }
         },
 		props: {
-			itemList: Array,
 			animate: {
 				type: Boolean,
 				default: true
