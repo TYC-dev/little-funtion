@@ -31,7 +31,10 @@
         },
         methods: {
             onItemClick(){
-                if(this.disabled) return
+                if(this.disabled) {
+                    this.$emit('onDisableClick')
+                    return
+                }
                 this.$parent.currentIndex = this.currentIndex
                 this.$emit('on-Item-Click',this.currentIndex)
                 this.isActive = true

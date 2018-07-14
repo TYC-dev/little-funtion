@@ -9,6 +9,7 @@ import ShowBoxGrid from '@/components/ShowBoxGrid'
 import Showcheader from '@/components/Showheader'
 import ShowCbox from '@/components/ShowCbox'
 import ShowCtable from '@/components/ShowTable'
+import ShowTips from '@/components/ShowTips'
 
 import TabBlock1 from '@/components/ShowTabBlock1'
 import TabBlock2 from '@/components/ShowTabBlock2'
@@ -61,6 +62,10 @@ export default new Router({
     {
       path: '/table',
       component: ShowCtable
+    },
+    {
+      path: '/tips',
+      component: ShowTips
     }
   ]
 })
