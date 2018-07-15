@@ -121,7 +121,7 @@
         .left-arrow{
             position: absolute;
             top: 15px;
-            left: 14px;
+            left: 16px;
             width: 12px;
             height: 12px;
             border: 1px solid @commonColor;
@@ -131,7 +131,7 @@
         .left-text{
             position: absolute;
             top: 0;
-            left: 28px;
+            left: 36px;
             font-size: 16px;
             line-height: 44px;
             color: @commonColor
