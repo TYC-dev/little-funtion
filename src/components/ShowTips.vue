@@ -1,26 +1,34 @@
 <template>
     <div class="show-tips-box">
-        <button @click="changeShow" style="padding: 10px 20px">{{show}}</button>
-        <tips v-model="show" :direction="'top'"><span>11111</span></tips>
+        <cbutton @click.native="changeShow1">顶部</cbutton>
+        <cbutton @click.native="changeShow2">底部</cbutton>
+        <tips v-model="show1" :direction="'top'"><span>tips top</span></tips>
+        <tips v-model="show2" :direction="'bottom'"><span>tips bottom</span></tips>
     </div>
 </template>
 
 <script>
     import Tips from './tips/Tips'
+    import Cbutton from './Cbutton/Cbutton'
 
     export default{
         name: 'showtips',
         components: {
-            Tips
+            Tips,
+            Cbutton
         },
         methods: {
-            changeShow() {
-                this.show = true
+            changeShow1() {
+                this.show1 = true
+            },
+            changeShow2() {
+                this.show2 = true
             }
         },
         data() {
             return {
-                show: false
+                show1: false,
+                show2: false
             }
         }
     }

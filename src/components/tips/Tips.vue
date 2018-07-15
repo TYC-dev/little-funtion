@@ -67,7 +67,7 @@
 
 <style lang="less">
     .tips{
-        z-index: 550;
+        z-index: 700;
         position: fixed;
         left: 50%;
         min-width: 76px;

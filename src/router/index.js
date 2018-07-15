@@ -10,6 +10,7 @@ import Showcheader from '@/components/Showheader'
 import ShowCbox from '@/components/ShowCbox'
 import ShowCtable from '@/components/ShowTable'
 import ShowTips from '@/components/ShowTips'
+import ShowCbutton from '@/components/ShowCbutton'
 
 import TabBlock1 from '@/components/ShowTabBlock1'
 import TabBlock2 from '@/components/ShowTabBlock2'
@@ -66,6 +67,10 @@ export default new Router({
     {
       path: '/tips',
       component: ShowTips
+    },
+    {
+      path: '/button',
+      component: ShowCbutton
     }
   ]
 })
