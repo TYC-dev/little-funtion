@@ -29,6 +29,17 @@
                     <span slot="label">Ctable</span>
                 </box-grid-item>
             </box-grid-row>
+            <box-grid-row>
+                <box-grid-item link="/tips">
+                    <img slot="icon" src="../assets/icon/createtask.png" alt="">
+                    <span slot="label">Tips</span>
+                </box-grid-item>
+                <box-grid-item link="/button">
+                    <img slot="icon" src="../assets/icon/createtask.png" alt="">
+                    <span slot="label">Button</span>
+                </box-grid-item>
+                <box-grid-item></box-grid-item>
+            </box-grid-row>
         </box-grid>
     </div>
 </template>
