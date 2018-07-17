@@ -20,11 +20,11 @@ export default {
             type: Boolean,
             default: false
         },
-        link: String,
         gradient: {
             type: Boolean,
             default: false
-        }
+        },
+        link: String
     },
     computed: {
         btnClass() {

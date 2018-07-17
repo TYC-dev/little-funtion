@@ -22,9 +22,6 @@
                 default: 'bottom'
             }
         },
-        mounted() {
-            console.log(this.direction)
-        },
         computed: {
             showClass() {
                 if(this.direction == 'bottom'){
@@ -37,8 +34,7 @@
                         'tips-top': true,
                         'tips-top-show': this.show
                     }
-                }
-                
+                } 
             }
         },
         watch: {
@@ -66,15 +62,19 @@
 </script>
 
 <style lang="less">
+    // mixing
+    .tipsTopBottom{
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    // style
     .tips{
         z-index: 700;
         position: fixed;
-        left: 50%;
         min-width: 76px;
         padding: 5px 15px;
-        transform: translateX(-50%);
         border-radius: 4px;
-        background-color: #9f9f9f;
+        background-color: rgba(0, 0, 0, 0.4);
     }
     .tips{
         transition: all .5s;
@@ -87,12 +87,14 @@
     }
     .tips-top{
         top: -40px;
+        .tipsTopBottom
     }
     .tips-top-show{
         top: 64px !important;
     }
     .tips-bottom{
         bottom: -40px;
+        .tipsTopBottom
     }
     .tips-bottom-show{
         bottom: 80px !important;
