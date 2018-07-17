@@ -109,6 +109,38 @@
                     </tr>
                 </tbody>
             </c-table>
+        <h3>CTable</h3>
+        <h5>属性</h5>
+        <c-table class="atrribute-table">
+            <thead>
+                <tr>
+                    <th>属性名</th>
+                    <th>类型</th>
+                    <th>默认值</th>
+                    <th>说明</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>bordered</td>
+                    <td><span>Boolean</span></td>
+                    <td>false</td>
+                    <td>是否有边框</td>
+                </tr>
+                <tr>
+                    <td>stript</td>
+                    <td><span>Boolean</span></td>
+                    <td>false</td>
+                    <td>条纹式表格</td>
+                </tr>
+                <tr>
+                    <td>responsive</td>
+                    <td><span>Boolean</span></td>
+                    <td>false</td>
+                    <td>响应式表格</td>
+                </tr>
+            </tbody>
+        </c-table>
     </div>
 </template>
 
@@ -122,6 +154,21 @@
         }
     }
 </script>
+
+<style lang="less">
+.show-tabble{
+    padding: 10px;
+    text-align: left;
+    p{
+        font-size: 16px;
+    }
+    h3{
+        font-size: 26px;
+        color: #45adca
+    }
+}
+</style>
+
 
 
 

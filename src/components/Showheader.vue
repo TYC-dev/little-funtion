@@ -17,7 +17,8 @@
           :leftType="{showLeft: false}"><span slot="title">no left back</span></cheader>
           <div class="show-header-des">
               <h4>属性</h4>
-                <c-table :responsive="true">  
+                <c-table class="atrribute-table"
+                  :responsive="true">  
                   <thead>
                       <tr>
                           <th>属性名</th>
@@ -29,31 +30,31 @@
                   <tbody>
                       <tr>
                           <td>title</td>
-                          <td>String</td>
+                          <td><span>String</span></td>
                           <td></td>
                           <td>标题</td>
                       </tr>
                       <tr>
                           <td>rightType.showRight</td>
-                          <td>Boolean</td>
+                          <td><span>Boolean</span></td>
                           <td>true</td>
                           <td>是否显示右边</td>
                       </tr>
                       <tr>
                           <td>rightType.showType</td>
-                          <td>String</td>
+                          <td><span>String</span></td>
                           <td>text</td>
                           <td>右边显示类型，text文字，dot点</td>
                       </tr>
                       <tr>
                           <td>leftType.showLeft</td>
-                          <td>Boolean</td>
+                          <td><span>Boolean</span></td>
                           <td>true</td>
                           <td>是否显示左边</td>
                       </tr>
                       <tr>
                           <td>leftType.showLeftText</td>
-                          <td>Boolean</td>
+                          <td><span>Boolean</span></td>
                           <td>true</td>
                           <td>是否显示左边文字</td>
                       </tr>

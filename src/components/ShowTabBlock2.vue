@@ -2,7 +2,8 @@
     <div class="show-tab-block">
         <h3>Tab</h3>
         <h5>属性</h5>
-        <c-table :responsive="true"
+        <c-table class="atrribute-table"
+          :responsive="true"
           :bordered="true">  
             <thead>
                 <tr>
@@ -15,14 +16,15 @@
             <tbody>
                 <tr>
                     <td>animate</td>
-                    <td>boolean</td>
+                    <td><span>Boolean</span></td>
                     <td>true</td>
                     <td>是否设置切换动画</td>
                 </tr>
             </tbody>
         </c-table>
         <h5>插槽</h5>
-        <c-table :responsive="true"
+        <c-table class="atrribute-table"
+          :responsive="true"
           :bordered="true">  
             <thead>
                 <tr>
@@ -40,7 +42,8 @@
         <h3>TabItem</h3>
         <h5>属性</h5>
         <c-table :responsive="true"
-          :bordered="true">  
+          :bordered="true"
+          class="atrribute-table">  
             <thead>
                 <tr>
                     <th>属性名</th>
@@ -52,20 +55,21 @@
             <tbody>
                 <tr>
                     <td>active</td>
-                    <td>boolean</td>
+                    <td><span>Boolean</span></td>
                     <td>false</td>
                     <td>当前选中</td>
                 </tr>
                 <tr>
                     <td>disabled</td>
-                    <td>boolean</td>
+                    <td><span>Boolean</span></td>
                     <td></td>
                     <td>是否不可选</td>
                 </tr>
             </tbody>
         </c-table>
         <h5>插槽</h5>
-        <c-table :responsive="true"
+        <c-table class="atrribute-table"
+          :responsive="true"
           :bordered="true">  
             <thead>
                 <tr>

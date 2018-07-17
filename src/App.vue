@@ -21,7 +21,7 @@ export default {
 }
 </script>
 
-<style>
+<style lang="less">
 #app {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -34,5 +34,23 @@ export default {
 a{
   text-decoration: none;
   color: #45adca
+}
+
+.atrribute-table{
+  tbody{
+    tr{
+      td:first-child{
+        color: #45adca;
+      }
+      td:nth-child(2){
+        color: #fff;
+        span{
+          padding: 3px 5px;
+          border-radius: 2px;
+          background-color: #45adca;
+        }
+      }
+    }
+  }
 }
 </style>

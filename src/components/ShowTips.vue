@@ -23,13 +23,24 @@
             },
             changeShow2() {
                 this.show2 = true
+            },
+            changeShow3() {
+                this.show3 = true
             }
         },
         data() {
             return {
                 show1: false,
-                show2: false
+                show2: false,
+                show3: false
             }
         }
     }
 </script>
+
+<style>
+.show-tips-box{
+    margin: 10px;
+}
+</style>
+
