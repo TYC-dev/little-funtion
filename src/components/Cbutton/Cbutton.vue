@@ -1,11 +1,6 @@
 <template>
     <button class="c-btn"
-      :class="{
-          'c-btn-default': type === 'default',
-          'c-btn-normal': type === 'normal',
-          'c-btn-warn': type === 'warn',
-          'c-btn-disabled': disabled
-      }"
+      :class="btnClass"
       @click="onClick">
         <slot>
             <span>{{text}}</span>
@@ -25,17 +20,41 @@ export default {
             type: Boolean,
             default: false
         },
-        link: String
+        link: String,
+        gradient: {
+            type: Boolean,
+            default: false
+        }
+    },
+    computed: {
+        btnClass() {
+            
+            return [{
+                'c-btn-disabled': this.disabled
+            },
+            `c-btn-${this.type}`,
+            this.gradient ? `c-btn-${this.type}-gradient` : ''
+            ]
+        }
     },
     methods: {
         onClick() {
-            
+            if(this.link){
+                if(this.link.indexOf('http') == -1){
+                    this.$router.push(this.link)
+                }else{
+                    window.location.href = this.link
+                }
+            }
         }
     }
 }
 </script>
 
 <style lang="less">
+    @defaultColor: #45adca;
+    @normalColor: #f8f8f8;
+    @warnColor: #E64340;
     .c-btn{
         width: 100%;
         border: none;
@@ -55,10 +74,11 @@ export default {
             height: 200%;
             top: 0;
             left: 0;
-            border: 1px solid rgba(0, 0, 0, 0.4);
+            border: 1px solid rgba(0, 0, 0, 0.3);
             transform: scale(0.5);
             transform-origin: 0 0;
             border-radius: 12px;
+            box-sizing: border-box;
         }
     }
     .c-btn{
@@ -68,14 +88,14 @@ export default {
         color: #fff;
     }
     .c-btn-default{
-        background-color: #45adca;
+        background-color: @defaultColor;
     }
     .c-btn-normal{
-        background-color: #f8f8f8;
+        background-color: @normalColor;
         color: #000;
     }
     .c-btn-warn{
-        background-color: #E64340;
+        background-color: @warnColor;
     }
     .c-btn-disabled{
         background-color: #b7b7b7;
@@ -89,8 +109,13 @@ export default {
         background-size: 45px 45px;
         color: #fff;
     }
-    .c-btn-gradient{
-                          
+    .c-btn-default-gradient{
+        @color:  saturate(@defaultColor,50%);
+        background-image: linear-gradient(90deg, #45adca 0%, @color 100%);              
+    }
+    .c-btn-warn-gradient{
+        @color:  saturate(@warnColor,50%);
+        background-image: linear-gradient(90deg, #E64340 0%, @color 100%);              
     }
 </style>
 
