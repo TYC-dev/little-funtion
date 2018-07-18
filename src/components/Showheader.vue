@@ -1,19 +1,19 @@
 <template>
     <div class="show-header-box">
-        <cheader><span slot="title">Title as slot</span></cheader>
-        <cheader style="top: 66px"
+        <cheader style="z-index: 599;"><span slot="title">Title as slot</span></cheader>
+        <cheader style="top: 66px;z-index: 599;"
           :title="'Title as props'"></cheader>
-        <cheader style="top: 130px"
+        <cheader style="top: 130px;z-index: 599"
           :rightType="{showRight: false}"><span slot="title">header without right</span></cheader>
-        <cheader style="top: 194px"
+        <cheader style="top: 194px;z-index: 599"
           :rightType="{showType: 'dot'}"><span slot="title">dot right</span></cheader>
-        <cheader style="top: 258px">
+        <cheader style="top: 258px;z-index: 599">
             <span slot="title">custom right</span>
             <span slot="right">选项</span>
         </cheader>
-        <cheader style="top: 322px"
+        <cheader style="top: 322px;z-index: 599"
           :leftType="{showLeftText: false}"><span slot="title">left back without text</span></cheader>
-        <cheader style="top: 386px"
+        <cheader style="top: 386px;z-index: 599"
           :leftType="{showLeft: false}"><span slot="title">no left back</span></cheader>
           <div class="show-header-des">
               <h4>属性</h4>
@@ -61,6 +61,12 @@
                   </tbody>
               </c-table>
           </div>
+          <h3>
+            <a href="https://github.com/TYC-dev/little-toolkit/blob/master/src/components/Cheader/Cheader.vue">组件源码</a>
+          </h3>
+          <h3>
+              <a href="https://github.com/TYC-dev/little-toolkit/blob/master/src/components/Showheader.vue">demo源码</a>
+          </h3>
     </div>
 </template>
 

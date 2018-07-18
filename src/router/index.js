@@ -11,6 +11,8 @@ import ShowCbox from '@/components/ShowCbox'
 import ShowCtable from '@/components/ShowTable'
 import ShowTips from '@/components/ShowTips'
 import ShowCbutton from '@/components/ShowCbutton'
+import ShowCswitch from '@/components/ShowCswitch'
+
 
 import TabBlock1 from '@/components/ShowTabBlock1'
 import TabBlock2 from '@/components/ShowTabBlock2'
@@ -71,6 +73,10 @@ export default new Router({
     {
       path: '/button',
       component: ShowCbutton
+    },
+    {
+      path: '/switch',
+      component: ShowCswitch
     }
   ]
 })
