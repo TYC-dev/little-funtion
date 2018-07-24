@@ -1,4 +1,4 @@
-# little-things
+# little-toolkit
 
 > A Vue.js project
 
