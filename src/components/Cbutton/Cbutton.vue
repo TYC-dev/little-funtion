@@ -24,6 +24,10 @@ export default {
             type: Boolean,
             default: false
         },
+        bordered: {
+            type: Boolean,
+            default: false
+        },
         link: String
     },
     computed: {
@@ -33,7 +37,8 @@ export default {
                 'c-btn-disabled': this.disabled
             },
             `c-btn-${this.type}`,
-            this.gradient ? `c-btn-${this.type}-gradient` : ''
+            this.gradient ? `c-btn-${this.type}-gradient` : '',
+            this.bordered ? `c-btn-${this.type}-bordered` : ''
             ]
         }
     },
@@ -96,6 +101,21 @@ export default {
     }
     .c-btn-warn{
         background-color: @warnColor;
+    }
+    .c-btn-default-bordered{
+        background-color: #fff;
+        border: 1px solid @defaultColor;
+        color: @defaultColor;
+    }
+    .c-btn-normal-bordered{
+        background-color: #fff;
+        border: 1px solid @normalColor;
+        color: #000;
+    }
+    .c-btn-warn-bordered{
+        background-color: #fff;
+        border: 1px solid @warnColor;
+        color: @warnColor;
     }
     .c-btn-disabled{
         background-color: #b7b7b7;
