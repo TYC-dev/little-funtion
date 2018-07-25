@@ -14,6 +14,7 @@
  @boederColer: #c7c7c7;
     .box-grid-container{
         position: relative;
+        background-color: #fff;
         &::after{
             content: '';
             position: absolute;
