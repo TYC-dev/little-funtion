@@ -12,6 +12,7 @@ import ShowCtable from '@/components/ShowTable'
 import ShowTips from '@/components/ShowTips'
 import ShowCbutton from '@/components/ShowCbutton'
 import ShowCswitch from '@/components/ShowCswitch'
+import ShowGroup from '@/components/ShowGroup'
 
 
 import TabBlock1 from '@/components/ShowTabBlock1'
@@ -34,49 +35,52 @@ export default new Router({
     {
       path: '/tab',
       name: 'tab',
-      component: ShowTab,
-      children:[{
-        path: '',
-        component: TabBlock1
-      },{
-        path: 'tabblock1',
-        component: TabBlock1
-      },{
-        path: 'tabblock2',
-        component: TabBlock2
-      }]
+      component: ShowTab
     },
     {
       path: '/flexbox',
+      name: 'flexbox',
       component: ShowFlexBox
     },
     {
       path: '/boxgrid',
+      name: 'box-grid',
       component: ShowBoxGrid
     },
     {
       path: '/header',
+      name: 'header',
       component: Showcheader
     },
     {
       path: '/cbox',
+      name: 'cbox',
       component: ShowCbox
     },
     {
       path: '/table',
+      name: 'ctable',
       component: ShowCtable
     },
     {
       path: '/tips',
+      name: 'tips',
       component: ShowTips
     },
     {
       path: '/button',
+      name: 'button',
       component: ShowCbutton
     },
     {
       path: '/switch',
+      name: 'switch',
       component: ShowCswitch
+    },
+    {
+      path: '/group',
+      name: 'group',
+      component: ShowGroup
     }
   ]
 })

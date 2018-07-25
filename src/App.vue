@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <cbox style="background-color: #fff">
+    <cbox style="background-color: RGBA(245, 245, 245, 1)">
       <cheader slot="header"><span slot="title">sdfad</span></cheader>
       <!-- <img src="./assets/logo.png"> -->
       <router-view></router-view>
@@ -35,7 +35,6 @@ a{
   text-decoration: none;
   color: #45adca
 }
-
 .atrribute-table{
   tbody{
     tr{
