@@ -1,9 +1,9 @@
 <template>
     <div class="c-table-container"
-      :class="{'c-table-container-responsive': responsive}">
+      :class="{'c-table-container-responsive': responsive,
+        'c-table-container-bordered': bordered}">
         <table class="c-table"
-          :class="{'c-table-bordered': bordered,
-          'c-table-stript': stript}">
+          :class="{'c-table-stript': stript}">
             <slot></slot>
         </table>
     </div>
@@ -59,10 +59,11 @@
                 border-bottom: 1px solid #cecece;
             }
         }
-    }
-    .c-table-bordered{
-        border: 1px solid #e6e6e6;
-        border-radius: 2px
+        &-bordered{
+            border-left: 1px solid #e6e6e6;
+            border-right: 1px solid #e6e6e6;
+            border-radius: 2px;
+        }
     }
     .c-table-stript{
         tr{
