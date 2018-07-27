@@ -39,6 +39,7 @@
     .c-table-container{
         position: relative;
         width: 100%;
+        background-color: #fff;
         .c-table{
             width: 100%;
             line-height: 40px;
