@@ -43,7 +43,7 @@ export default {
     },
     methods: {
         onCLick() {
-            if(this.disabled) return
+            if(this.disabled || !this.isLink) return
             if(typeof(this.link) != 'undefined'){
                 if( this.link.indexOf('http') === -1 ){
                         this.$router.push(this.link)
@@ -69,7 +69,7 @@ export default {
            &-left{
             flex: 1;
             text-align: left;
-            font-size: 20px;
+            font-size: 16px;
             line-height: 30px;
             color: RGBA(92, 98, 102, 1);
             }
@@ -95,6 +95,7 @@ export default {
         
         &-extra{
             display: block;
+            padding-top: 5px;
         }
         &-disabled{
             color: #c3c3c3;
