@@ -1,17 +1,21 @@
 <template>
     <div class="c-dialog-wrap">
-        <div class="c-dialog"
-        v-show="value">
-            <div class="c-dialog-inner">
-                <div class="c-dialog-close"
-                v-if="!onMaskHide"
-                @click="hide"></div>
-                <slot></slot>  
+        <transition name="dialog-fade">
+            <div class="c-dialog"
+            v-show="value">
+                <div class="c-dialog-inner">
+                    <div class="c-dialog-close"
+                    v-if="!onMaskHide"
+                    @click="hide"></div>
+                    <slot></slot>  
+                </div>
             </div>
-        </div>
-        <div class="c-dialog-mask"
-        v-show="value"
-        @click="hideOnMask"></div>
+        </transition>
+        <transition name="dialog-fade">
+            <div class="c-dialog-mask"
+            v-show="value"
+            @click="hideOnMask"></div>
+        </transition>
     </div>
 </template>
 
@@ -55,6 +59,7 @@
         z-index: 1000;
         display: table;
         width: 80%;
+        max-width: 370px;
         min-height: 1px;
         margin: auto;
         background-color: #fff;
@@ -67,7 +72,7 @@
                 top: -45px;
                 width: 25px;
                 height: 25px;
-                border: 2px solid #fff;
+                border: 1px solid #fff;
                 border-radius: 50%;
                 &::before{
                     content: '';
@@ -75,7 +80,7 @@
                     top: 11px;
                     left: 5px;
                     width: 15px;
-                    border-top: 2px solid #fff;
+                    border-top: 1px solid #fff;
                     transform: rotate(45deg);
                 }
                 &::after{
@@ -84,7 +89,7 @@
                     top: 11px;
                     left: 5px;
                     width: 15px;
-                    border-top: 2px solid #fff;
+                    border-top: 1px solid #fff;
                     transform: rotate(315deg);
                 }
             }
@@ -97,10 +102,14 @@
         bottom: 0;
         left: 0;
         right: 0;
-        background-color: #000;
-        opacity: 0.5;
+        background-color: rgba(0, 0, 0, 0.5);
     }
 }
-    
+.dialog-fade-enter-active, .dialog-fade-leave-active{
+    transition: all .3s ease;
+}
+.dialog-fade-enter, .dialog-fade-leave-to{
+    opacity: 0;
+}
 
 </style>
