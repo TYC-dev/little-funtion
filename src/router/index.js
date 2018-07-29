@@ -13,10 +13,9 @@ import ShowTips from '@/components/ShowTips'
 import ShowCbutton from '@/components/ShowCbutton'
 import ShowCswitch from '@/components/ShowCswitch'
 import ShowGroup from '@/components/ShowGroup'
+import ShowCard from '@/components/ShowCard'
+import ShowDialog from '@/components/ShowDialog'
 
-
-import TabBlock1 from '@/components/ShowTabBlock1'
-import TabBlock2 from '@/components/ShowTabBlock2'
 
 Vue.use(Router)
 
@@ -81,6 +80,16 @@ export default new Router({
       path: '/group',
       name: 'group',
       component: ShowGroup
+    },
+    {
+      path: '/card',
+      name: 'card',
+      component: ShowCard
+    },
+    {
+      path: '/dialog',
+      name: 'dialog',
+      component: ShowDialog
     }
   ]
 })

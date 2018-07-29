@@ -38,6 +38,20 @@
                     <img slot="icon" src="../assets/icon/createtask.png" alt="">
                     <span slot="label">Button</span>
                 </box-grid-item>
+                <box-grid-item link="/group">
+                    <img slot="icon" src="../assets/icon/createtask.png" alt="">
+                    <span slot="label">group&amp;cell</span>
+                </box-grid-item>
+            </box-grid-row>
+            <box-grid-row>
+                <box-grid-item link="/switch">
+                    <img slot="icon" src="../assets/icon/createtask.png" alt="">
+                    <span slot="label">switch</span>
+                </box-grid-item>
+                <box-grid-item link="/dialog">
+                    <img slot="icon" src="../assets/icon/createtask.png" alt="">
+                    <span slot="label">dialog</span>
+                </box-grid-item>
                 <box-grid-item></box-grid-item>
             </box-grid-row>
         </box-grid>
