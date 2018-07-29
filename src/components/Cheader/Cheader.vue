@@ -13,7 +13,8 @@
             </slot>
         </h1>
         <div class="c-header-right"
-          v-show="_rightType.showRight">
+        v-show="_rightType.showRight"
+        @click="clickRight">
             <slot name="right">
                 <div class="right-more-text"
                 v-show="rightShow">更多</div>
@@ -54,12 +55,15 @@
         //     console.log(asdf)
         // },
         methods: {
-            clickLeft(){
+            clickLeft() {
                 if(this.$router){
                     this.$router.back()
                 }else{
                     window.history.back()
                 }
+            },
+            clickRight() {
+                this.$emit('on-click-right')
             }
         },
         computed: {
