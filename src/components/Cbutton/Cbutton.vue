@@ -9,6 +9,7 @@
 </template>
 
 <script>
+import { goLink } from '../../libs/goLink.js'
 export default {
     name: 'cbutton',
     props: {
@@ -44,13 +45,7 @@ export default {
     },
     methods: {
         onClick() {
-            if(this.link){
-                if(this.link.indexOf('http') == -1){
-                    this.$router.push(this.link)
-                }else{
-                    window.location.href = this.link
-                }
-            }
+            goLink(this.link, this.$router)
         }
     }
 }
