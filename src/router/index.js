@@ -13,7 +13,7 @@ import ShowTips from '@/components/ShowTips'
 import ShowCbutton from '@/components/ShowCbutton'
 import ShowCswitch from '@/components/ShowCswitch'
 import ShowGroup from '@/components/ShowGroup'
-import ShowCard from '@/components/ShowCard'
+// import ShowCard from '@/components/ShowCard'
 import ShowDialog from '@/components/ShowDialog'
 
 
@@ -80,11 +80,6 @@ export default new Router({
       path: '/group',
       name: 'group',
       component: ShowGroup
-    },
-    {
-      path: '/card',
-      name: 'card',
-      component: ShowCard
     },
     {
       path: '/dialog',
