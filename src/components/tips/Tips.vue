@@ -1,10 +1,14 @@
 <template>
-    <div class="tips"
-      :class="showClass">
-        <slot>
-            <p>{{text}}</p>
-        </slot>
-    </div>
+    <transition :name="transitionName">
+        <div class="tips"
+        :class="tipClass"
+        v-show="show">
+            <slot>
+                <p>{{text}}</p>
+            </slot>
+        </div>
+    </transition>
+    
 </template>
 
 <script>
@@ -19,22 +23,25 @@
             },
             direction: {
                 type: String,
-                default: 'bottom'
+                default: 'default'
             }
         },
         computed: {
-            showClass() {
-                if(this.direction == 'bottom'){
-                    return {
-                        'tips-bottom': true,
-                        'tips-bottom-show': this.show
-                    }
-                }else if(this.direction == 'top'){
-                    return {
-                        'tips-top': true,
-                        'tips-top-show': this.show
-                    }
-                } 
+            transitionName() {
+                if(this.direction === 'top'){
+                    return 'tips-from-top'
+                }else if(this.direction === 'bottom'){
+                    return 'tips-from-bottom'
+                }else{
+                    return 'tips-fade'
+                }
+            },
+            tipClass(){
+                return{
+                    'tips-top': this.direction === 'top',
+                    'tips-bottom': this.direction === 'bottom',
+                    'tips-fade': this.direction === 'default'
+                }
             }
         },
         watch: {
@@ -62,11 +69,6 @@
 </script>
 
 <style lang="less">
-    // mixing
-    .tipsTopBottom{
-        left: 50%;
-        transform: translateX(-50%);
-    }
     // style
     .tips{
         z-index: 700;
@@ -77,7 +79,8 @@
         background-color: rgba(0, 0, 0, 0.4);
     }
     .tips{
-        transition: all .5s;
+        left: 50%;
+        transform: translateX(-50%);
     }
     .tips{
         font-size: 16px;
@@ -86,18 +89,14 @@
         color: #fff;
     }
     .tips-top{
-        top: -40px;
-        .tipsTopBottom
-    }
-    .tips-top-show{
-        top: 64px !important;
+        top: 64px;
     }
     .tips-bottom{
-        bottom: -40px;
-        .tipsTopBottom
+        bottom: 80px;
     }
-    .tips-bottom-show{
-        bottom: 80px !important;
+    .tips-fade{
+        bottom: 80px;
     }
+    @import '../../styles/transition.less';
 </style>
 

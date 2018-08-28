@@ -1,9 +1,11 @@
 <template>
     <div class="show-tips-box">
+        <cbutton @click.native="changeShow3">default</cbutton>
         <cbutton @click.native="changeShow1">顶部</cbutton>
         <cbutton @click.native="changeShow2">底部</cbutton>
-        <tips v-model="show1" :direction="'top'"><span>tips top</span></tips>
-        <tips v-model="show2" :direction="'bottom'"><span>tips bottom</span></tips>
+        <tips v-model="show3"><span>tips default</span></tips>
+        <tips v-model="show1" direction="top"><span>tips top</span></tips>
+        <tips v-model="show2" direction="bottom"><span>tips bottom</span></tips>
         <c-table class="atrribute-table"
                   style="margin-top: 40px"
                   :responsive="true"
@@ -32,8 +34,8 @@
                       <tr>
                           <td>direction</td>
                           <td><span>String</span></td>
-                          <td>bottom</td>
-                          <td>由哪里弹出，默认下方，可选top上方，bottom下方</td>
+                          <td>default</td>
+                          <td>由哪里弹出，默认底部渐变显示，可选top上方，bottom下方</td>
                       </tr>
                   </tbody>
               </c-table>
